@@ -10,7 +10,7 @@ public class UriTemplate {
   private final List<String> extracted;
 
   public UriTemplate(String expression) {
-    this.extracted = extract(expression);
+    this.extracted = extract(expression.replace("%7B", "{").replace("%7D", "}"));
   }
 
   static List<String> extract(String path) {
